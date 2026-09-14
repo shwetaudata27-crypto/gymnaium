@@ -50,6 +50,18 @@ SMTP_FROM="US Gymnasium <your-gmail-address@gmail.com>"
 SMTP_REPLY_TO=your-gmail-address@gmail.com
 ```
 
+For the hosted Render backend, add these as service environment variables under
+**Environment**. Do not commit them to GitHub:
+
+- `SMTP_SERVICE=gmail`
+- `SMTP_USER=your-gmail-address@gmail.com`
+- `SMTP_PASS=your-16-character-google-app-password`
+- `SMTP_FROM=US Gymnasium <your-gmail-address@gmail.com>`
+- `SMTP_REPLY_TO=your-gmail-address@gmail.com`
+
+After saving the variables, redeploy the service. The email API will return a
+configuration error until these values are present.
+
 ## Endpoints
 
 - `POST /adminlogin` `POST /userlogin` — login (returns `token` / `idToken`)

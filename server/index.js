@@ -493,7 +493,7 @@ async function sendTrackedEmail({ to, subject, text, html, clientId, emailType }
     throw new Error('No recipient email address provided');
   }
   if (!mailer) {
-    throw new Error('SMTP is not configured. Set SMTP_HOST, SMTP_USER and SMTP_PASS in server/.env');
+    throw new Error('SMTP is not configured. Set SMTP_HOST, SMTP_USER and SMTP_PASS in the backend deployment environment.');
   }
 
   const safeText = String(text || '').trim();
