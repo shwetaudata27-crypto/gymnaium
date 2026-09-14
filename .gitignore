@@ -36,3 +36,4 @@ server/*.log
 release/
 .lovable/memory/auth/
 
+.vercel
