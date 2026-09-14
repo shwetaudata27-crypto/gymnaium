@@ -19,6 +19,8 @@ const PORT = process.env.PORT || 5000;
 const DATA_DIR = __dirname;
 const DB_PATH = path.resolve(process.env.DB_PATH || path.join(DATA_DIR, 'gym.db'));
 if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
+const DB_DIR = path.dirname(DB_PATH);
+if (!fs.existsSync(DB_DIR)) fs.mkdirSync(DB_DIR, { recursive: true });
 
 const db = new Database(DB_PATH);
 db.pragma('wal_checkpoint(TRUNCATE)');
