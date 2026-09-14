@@ -1,0 +1,41 @@
+services:
+  - type: web
+    name: us-gymnasium-api
+    runtime: node
+    buildCommand: npm install --prefix server --include=optional
+    startCommand: npm run server
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DB_PATH
+        value: /opt/render/project/src/server/data/gym.db
+      - key: CORS_ORIGIN
+        value: https://us-gymnasium-web.onrender.com
+      - key: JWT_SECRET
+        generateValue: true
+      - key: SMTP_SERVICE
+        sync: false
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASS
+        sync: false
+      - key: SMTP_FROM
+        sync: false
+      - key: SMTP_REPLY_TO
+        sync: false
+    disk:
+      name: us-gymnasium-data
+      mountPath: /opt/render/project/src/server/data
+      sizeGB: 1
+
+  - type: static_site
+    name: us-gymnasium-web
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    envVars:
+      - key: VITE_API_URL
+        fromService:
+          type: web
+          name: us-gymnasium-api
+          envVarKey: RENDER_EXTERNAL_URL

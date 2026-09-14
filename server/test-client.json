@@ -1,0 +1,16 @@
+{
+  "name": "Test User",
+  "email": "testuser@example.com",
+  "phone": "9999999999",
+  "dob": "1990-01-01",
+  "address": "Test Address",
+  "occupation": "Tester",
+  "age": 36,
+  "gender": "other",
+  "membershipType": {"gym": true},
+  "slot": "evening",
+  "membershipPeriod": 1,
+  "startDate": "2026-05-30",
+  "endDate": "2026-06-30",
+  "finalAmount": 100
+}

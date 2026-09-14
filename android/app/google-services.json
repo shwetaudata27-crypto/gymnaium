@@ -1,0 +1,33 @@
+{
+  "project_info": {
+    "project_number": "123456789012",
+    "project_id": "usgymnasium-app",
+    "storage_bucket": "usgymnasium-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:123456789012:android:abcdef123456",
+        "android_client_info": {
+          "package_name": "com.usgymnasium.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "123456789012-abcdefghijklmnopqrstuvwxyz.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.usgymnasium.app",
+            "certificate_hash": "ABCDEF1234567890ABCDEF1234567890ABCDEF12"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUMMYKEY"
+        }
+      ]
+    }
+  ],
+  "configuration_version": "1"
+}
