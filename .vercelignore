@@ -1,0 +1,15 @@
+node_modules
+release
+android/app/build
+android/.gradle
+server/node_modules
+server/gym.db
+server/*.log
+*.exe
+*.blockmap
+.env
+.env.*
+!.env.example
+bun.lockb
+dist
+.vercel
