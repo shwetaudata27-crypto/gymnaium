@@ -29,13 +29,3 @@ services:
       mountPath: /opt/render/project/src/server/data
       sizeGB: 1
 
-  - type: static_site
-    name: us-gymnasium-web
-    buildCommand: npm install && npm run build
-    staticPublishPath: ./dist
-    envVars:
-      - key: VITE_API_URL
-        fromService:
-          type: web
-          name: us-gymnasium-api
-          envVarKey: RENDER_EXTERNAL_URL
